@@ -66,52 +66,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "33xe":
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
- * window-size
- * https://github.com/jonschlinkert/window-size
- *
- * Copyright (c) 2014 Jon Schlinkert
- * Licensed under the MIT license.
- */
-
-var tty = __webpack_require__("Axko");
-
-module.exports = function () {
-  var width;
-  var height;
-
-  if (tty.isatty(1) && tty.isatty(2)) {
-    if (process.stdout.getWindowSize) {
-      width = process.stdout.getWindowSize(1)[0];
-      height = process.stdout.getWindowSize(1)[1];
-    } else if (tty.getWindowSize) {
-      width = tty.getWindowSize()[1];
-      height = tty.getWindowSize()[0];
-    } else if (process.stdout.columns && process.stdout.rows) {
-      height = process.stdout.columns;
-      width = process.stdout.rows;
-    }
-  } else {
-    new Error('Error: could not get window size with tty or process.stdout');
-  }
-  return {
-    height: height,
-    width: width
-  };
-}();
-
-/***/ }),
-
-/***/ "Axko":
-/***/ (function(module, exports) {
-
-module.exports = require("tty");
-
-/***/ }),
-
 /***/ "EBst":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1988,10 +1942,6 @@ dist_index_esm.initializeApp(config);
 var assets_style = __webpack_require__("cbDw");
 var assets_style_default = /*#__PURE__*/__webpack_require__.n(assets_style);
 
-// EXTERNAL MODULE: ./node_modules/window-size/index.js
-var window_size = __webpack_require__("33xe");
-var window_size_default = /*#__PURE__*/__webpack_require__.n(window_size);
-
 // CONCATENATED MODULE: ./index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return index_App; });
 
@@ -2001,7 +1951,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -2154,7 +2103,7 @@ var index_App = function (_Component) {
 
 		return Object(preact_min["h"])(
 			'div',
-			{ style: 'height: calc(100% - 50px)' },
+			{ style: 'height: 85%' },
 			this.state.showStartPage ? Object(preact_min["h"])(
 				'div',
 				{ className: 'startPage' },
