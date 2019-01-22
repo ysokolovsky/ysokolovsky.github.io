@@ -1957,7 +1957,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var _ref = Object(preact_min["h"])('img', { src: '/assets/startPageText.svg', alt: 'start page text' });
+var _ref = Object(preact_min["h"])(
+	'div',
+	{ className: 'startPage_text' },
+	'\u0424\u043B\u0435\u043A\u0441\u0438\u043A\u043E\u043D - \u0442\u043E\u043B\u043A\u043E\u0432\u044B\u0439 \u0441\u043B\u043E\u0432\u0430\u0440\u044C \u043C\u043E\u043B\u043E\u0434\u0435\u0436\u043D\u043E\u0433\u043E \u0441\u043B\u0435\u043D\u0433\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0434\u0430\u0436\u0435 \u0431\u0430\u0431\u0443\u0448\u043A\u0435 \u043E\u0431\u044A\u044F\u0441\u043D\u0438\u0442, \u0447\u0442\u043E \u043B\u043E\u0439\u0441 \u0438 \u043B\u043E\u0441\u044C - \u044D\u0442\u043E \u0440\u0430\u0437\u043D\u044B\u0435 \u0432\u0435\u0449\u0438.'
+);
 
 var _ref2 = Object(preact_min["h"])('img', { src: '/assets/r.svg', alt: 'R' });
 
@@ -1992,7 +1996,8 @@ var index_App = function (_Component) {
 
 			showStartPage: true,
 			showAddNewWord: false,
-			showWordAdded: false
+			showWordAdded: false,
+			plusHover: false
 		}, _this.isShowAddNewBlock = false, _this.handleChange = function (e) {
 			_this.setState({ word: e.target.value });
 			_this.checkWord();
@@ -2029,9 +2034,9 @@ var index_App = function (_Component) {
 				return translationsRef.push(o);
 			});
 		}, _this.showAddNew = function () {
-			_this.setState({ showAddNewText: true });
+			_this.setState({ plusHover: true });
 		}, _this.hideAddNew = function () {
-			_this.setState({ showAddNewText: false });
+			_this.setState({ plusHover: false });
 		}, _this.toggleAddNewWord = function () {
 			_this.setState({
 				showAddNewWord: !_this.state.showAddNewWord,
@@ -2076,8 +2081,8 @@ var index_App = function (_Component) {
 	App.prototype.render = function render() {
 		var classNames = __webpack_require__("HW6M");
 		var addNewClass = classNames({
-			'add-new': true,
-			'hide': !this.state.showAddNewText
+			'add-new-container_text': true,
+			'hide': !this.state.plusHover
 		});
 
 		return Object(preact_min["h"])(
@@ -2087,7 +2092,11 @@ var index_App = function (_Component) {
 				'div',
 				{ className: 'startPage' },
 				_ref,
-				Object(preact_min["h"])('img', { src: '/assets/okich.svg', alt: 'start page text', onClick: this.hideStartPage })
+				Object(preact_min["h"])(
+					'div',
+					{ className: 'startPage_btn', onClick: this.hideStartPage },
+					'\u041E\u041A\u0418\u0427'
+				)
 			) : '',
 			Object(preact_min["h"])(
 				'div',
@@ -2101,7 +2110,11 @@ var index_App = function (_Component) {
 					Object(preact_min["h"])(
 						'div',
 						{ className: 'add-new-container' },
-						Object(preact_min["h"])('img', { className: addNewClass, src: '/assets/add_new.svg', alt: 'add new' }),
+						Object(preact_min["h"])(
+							'div',
+							{ className: addNewClass },
+							'\u0414\u041E\u0411\u0410\u0412\u0418\u0422\u042C \u041D\u041E\u0412\u041E\u0415 \u0421\u041B\u041E\u0412\u041E'
+						),
 						Object(preact_min["h"])('img', {
 							className: 'plus',
 							src: '/assets/plus.svg',
