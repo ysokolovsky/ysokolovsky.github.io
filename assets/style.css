@@ -20,7 +20,7 @@
 .startPage_text {
   color: #ffffff;
   font-family: "Arial Black";
-  font-size: 35px;
+  font-size: 29px;
   font-weight: 900;
   text-align: center;
   width: 80%;
@@ -235,59 +235,32 @@ input[type=text]:focus {
   .add-new {
     width: 450px;
   }
+}
 
+@media (max-width: 1400px) { 
   .translation-result {
     margin-top: 60px;
-    color: #333333;
-    font-family: Arial;
     font-size: 33px;
-    font-weight: 700;
-    letter-spacing: 1.26px;
   }
   
-  input[type=text] {
-    color: #333333;
-    font-family: Arial;
-    font-size: 55px;
-    font-weight: 700;
-    letter-spacing: 2.1px;
-    border: 0;
-  }
+  
   
   input::placeholder {
-    color: #d3d3d3;
-    font-family: Arial;
     font-size: 46px;
-    font-weight: 700;
-    letter-spacing: 1.52px;
   }
 }
 
 @media (max-width: 1103px) { 
   .translation-result {
-    margin-top: 60px;
-    color: #333333;
-    font-family: Arial;
     font-size: 33px;
-    font-weight: 700;
-    letter-spacing: 1.26px;
   }
   
   input[type=text] {
-    color: #333333;
-    font-family: Arial;
     font-size: 55px;
-    font-weight: 700;
-    letter-spacing: 2.1px;
-    border: 0;
   }
   
   input::placeholder {
-    color: #d3d3d3;
-    font-family: Arial;
     font-size: 46px;
-    font-weight: 700;
-    letter-spacing: 1.52px;
   }
 }
 
