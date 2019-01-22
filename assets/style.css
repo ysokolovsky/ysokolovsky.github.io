@@ -1,6 +1,80 @@
+html, body
+{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
 .container {
   margin: 100px;
+  height: 100%;
   position: relative;
+}
+
+.shareContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.shareBlock {
+  margin-left: 20px;
+}
+
+.shareBlock a {
+  color: #d55256;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.shareBlock a:hover {
+  text-decoration: none;
+}
+
+.box {
+  cursor: pointer;
+  width: 88px;
+  height: 88px;
+  background-color: #d55256;
+
+  display: flex;
+  justify-content: center;
+
+  transition: width 2s;
+}
+
+.box span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  font-size: 22px;
+  transition: opacity 2s;
+  color: #ffffff;
+}
+
+.box img {
+  opacity: 1;
+  transition: opacity 2s;
+  margin-left: 120px;
+}
+
+.shareContainer:hover .box {
+  width: 169px;
+}
+
+.shareContainer:hover .box img {
+  opacity: 0;
+}
+
+.shareContainer:hover .box span {
+  opacity: 1;
 }
 
 .startPage {

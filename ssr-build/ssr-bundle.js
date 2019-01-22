@@ -66,6 +66,52 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "33xe":
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+ * window-size
+ * https://github.com/jonschlinkert/window-size
+ *
+ * Copyright (c) 2014 Jon Schlinkert
+ * Licensed under the MIT license.
+ */
+
+var tty = __webpack_require__("Axko");
+
+module.exports = function () {
+  var width;
+  var height;
+
+  if (tty.isatty(1) && tty.isatty(2)) {
+    if (process.stdout.getWindowSize) {
+      width = process.stdout.getWindowSize(1)[0];
+      height = process.stdout.getWindowSize(1)[1];
+    } else if (tty.getWindowSize) {
+      width = tty.getWindowSize()[1];
+      height = tty.getWindowSize()[0];
+    } else if (process.stdout.columns && process.stdout.rows) {
+      height = process.stdout.columns;
+      width = process.stdout.rows;
+    }
+  } else {
+    new Error('Error: could not get window size with tty or process.stdout');
+  }
+  return {
+    height: height,
+    width: width
+  };
+}();
+
+/***/ }),
+
+/***/ "Axko":
+/***/ (function(module, exports) {
+
+module.exports = require("tty");
+
+/***/ }),
+
 /***/ "EBst":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1942,6 +1988,10 @@ dist_index_esm.initializeApp(config);
 var assets_style = __webpack_require__("cbDw");
 var assets_style_default = /*#__PURE__*/__webpack_require__.n(assets_style);
 
+// EXTERNAL MODULE: ./node_modules/window-size/index.js
+var window_size = __webpack_require__("33xe");
+var window_size_default = /*#__PURE__*/__webpack_require__.n(window_size);
+
 // CONCATENATED MODULE: ./index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return index_App; });
 
@@ -1951,6 +2001,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -1975,6 +2026,17 @@ var _ref5 = Object(preact_min["h"])(
 	'\u041F\u0443\u0448\u043A\u0430, \u0442\u0432\u043E\u0435 \u0441\u043B\u043E\u0432\u043E \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043E \u0432 \u0441\u043B\u043E\u0432\u0430\u0440\u044C! \u041C\u043E\u0436\u0435\u0448\u044C \u0441\u0440\u0430\u0437\u0443 \u0447\u0435\u043A\u043D\u0443\u0442\u044C \u0435\u0433\u043E \u0432 \u043D\u0430\u0448\u0435\u043C \u0444\u043B\u0435\u043A\u0441\u0438\u043A\u043E\u043D\u0435!'
 );
 
+var _ref6 = Object(preact_min["h"])(
+	'div',
+	{ className: 'box' },
+	Object(preact_min["h"])('img', { src: '/assets/arrow.svg' }),
+	Object(preact_min["h"])(
+		'span',
+		null,
+		'share'
+	)
+);
+
 var index_App = function (_Component) {
 	_inherits(App, _Component);
 
@@ -1997,7 +2059,8 @@ var index_App = function (_Component) {
 			showStartPage: true,
 			showAddNewWord: false,
 			showWordAdded: false,
-			plusHover: false
+			plusHover: false,
+			showShare: false
 		}, _this.isShowAddNewBlock = false, _this.handleChange = function (e) {
 			_this.setState({ word: e.target.value });
 			_this.checkWord();
@@ -2037,6 +2100,10 @@ var index_App = function (_Component) {
 			_this.setState({ plusHover: true });
 		}, _this.hideAddNew = function () {
 			_this.setState({ plusHover: false });
+		}, _this.showAddNew = function () {
+			_this.setState({ showShare: true });
+		}, _this.hideAddNew = function () {
+			_this.setState({ showShare: false });
 		}, _this.toggleAddNewWord = function () {
 			_this.setState({
 				showAddNewWord: !_this.state.showAddNewWord,
@@ -2049,7 +2116,7 @@ var index_App = function (_Component) {
 			}, 100);
 		}, _this.hideStartPage = function () {
 			_this.setState({ showStartPage: false });
-		}, _temp), _possibleConstructorReturn(_this, _ret);
+		}, _this.showShareBtns = function () {}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
 	App.prototype.componentDidMount = function componentDidMount() {
@@ -2087,7 +2154,7 @@ var index_App = function (_Component) {
 
 		return Object(preact_min["h"])(
 			'div',
-			null,
+			{ style: 'height: calc(100% - 50px)' },
 			this.state.showStartPage ? Object(preact_min["h"])(
 				'div',
 				{ className: 'startPage' },
@@ -2164,7 +2231,25 @@ var index_App = function (_Component) {
 						{ className: 'translation-result' },
 						this.state.translation
 					)
-				) : ''
+				) : '',
+				Object(preact_min["h"])(
+					'div',
+					{ className: 'shareContainer',
+						style: this.state.showShare ? 'width: 100%' : '',
+						onMouseEnter: this.showAddNew,
+						onMouseLeave: this.hideAddNew
+					},
+					_ref6,
+					this.state.showShare ? Object(preact_min["h"])(
+						'div',
+						{ className: 'shareBlock' },
+						Object(preact_min["h"])(
+							'a',
+							{ href: 'https://www.linkedin.com/shareArticle?mini=true&url=' + window.location.href, target: '_blank' },
+							'LinkedIn'
+						)
+					) : ''
+				)
 			)
 		);
 	};
