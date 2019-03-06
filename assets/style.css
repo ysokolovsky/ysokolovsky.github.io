@@ -6,11 +6,19 @@ html, body
   overflow: hidden;
 }
 
-
 .container {
-  margin: 100px;
+  margin: 5%;;
   height: 100%;
   position: relative;
+}
+
+.container > img {
+  width: 5%;
+}
+
+.head > img {
+  width: 30%;
+  align-self: center;
 }
 
 .shareContainer {
@@ -38,14 +46,14 @@ html, body
 
 .box {
   cursor: pointer;
-  width: 88px;
-  height: 88px;
+  width: 5vw;
+  height: 5vw;
   background-color: #d55256;
 
   display: flex;
   justify-content: center;
 
-  transition: width 2s;
+  transition: width 0.5s;
 }
 
 .box span {
@@ -55,14 +63,14 @@ html, body
   transform: translateY(-50%);
   opacity: 0;
   font-size: 22px;
-  transition: opacity 2s;
+  transition: opacity 0.25s;
   color: #ffffff;
 }
 
 .box img {
   opacity: 1;
-  transition: opacity 2s;
-  margin-left: 120px;
+  transition: opacity 0.25s;
+  margin-left: 5.3vw;
 }
 
 .shareContainer:hover .box {
@@ -128,7 +136,7 @@ html, body
 
 .plus {
   margin-left: 15px;
-  height: 57px;
+  height: 2.5vw;
   cursor: pointer;
 }
 
@@ -145,10 +153,10 @@ html, body
   color: #d55256;
   font-weight: 900;
   font-family: "Arial Black";
-  font-size: 40px;
+  font-size: 2.8vw;
 }
 
-@media (max-width: 1440px) { 
+/* @media (max-width: 1440px) { 
   .add-new-container_text {
     font-size: 30px;
   }
@@ -164,20 +172,23 @@ html, body
   .add-new-container_text {
     font-size: 20px;
   }
-}
+} */
 
 .add-btn {
   cursor: pointer;
+  color: #ffffff;
+  font-family: "Arial Black";
+  font-size: 2.5vw;
 }
 
 .add-new-block {
-  width: 730px;
-  height: 400px;
+  width: 65%;
+  height: 21vw;
   padding: 20px;
   background-color: #d55256;
 
   position: absolute;
-  right: 72px;
+  right: 48px;
   top: 0;
 
   display: flex;
@@ -191,7 +202,7 @@ html, body
   background-color: #d55256;
   font-weight: 900;
   font-family: "Arial Black";
-  font-size: 50px;
+  font-size: 2.5vw;
   font-weight: normal;
   border: 0;
   letter-spacing: normal;
@@ -202,7 +213,7 @@ html, body
 .add-new-block input::placeholder {
   color: #333333;
   font-family: "Arial Black";
-  font-size: 28px;
+  font-size: 2.5vw;
   font-weight: 900;
   letter-spacing: normal;
 }
@@ -212,12 +223,12 @@ html, body
   background-color: #d55256;
   font-weight: 900;
   font-family: "Arial Black";
-  font-size: 50px;
+  font-size: 2.5vw;
   font-weight: normal;
   border: 0;
   letter-spacing: normal;
   text-align: right;
-  width: 75%;
+  width: 80%;
   height: 200px;
   resize: none;
   overflow: hidden;
@@ -226,7 +237,7 @@ html, body
 .add-new-block textarea::placeholder {
   color: #333333;
   font-family: Arial;
-  font-size: 28px;
+  font-size: 2.5vw;
   font-weight: 900;
   letter-spacing: normal;
 }
@@ -250,7 +261,6 @@ html, body
   width: 100%;
   height: 100%;
   position: absolute;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -258,17 +268,22 @@ html, body
   background-color: #d55256;
 }
 
-.wordAdded img {
-  margin-bottom: 40px;
-}
-
 .wordAddedText {
   color: #ffffff;
-  font-family: Arial;
+  font-family: "Arial Black";
   font-weight: 600;
-  width: 70%;
+  width: 80%;
   text-align: right;
-  font-size: 40px;
+  font-size: 1.7vw;
+  margin-top: 3%;
+}
+
+.wordAddedOk {
+  cursor: pointer;
+  color: #000000;
+  font-family: "Arial Black";
+  font-size: 2.5vw;
+  margin-bottom: 20px;
 }
 
 .translation-result {
@@ -278,12 +293,15 @@ html, body
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 1.26px;
+  
+  width: 100%;
+  height: 300px;
 }
 
 input[type=text] {
   color: #333333;
   font-family: Arial;
-  font-size: 105px;
+  font-size: 5vw;
   font-weight: 700;
   letter-spacing: 2.1px;
   border: 0;
@@ -292,8 +310,8 @@ input[type=text] {
 input::placeholder {
   color: #d3d3d3;
   font-family: Arial;
-  font-size: 76px;
-  font-weight: 700;
+  font-size: 5vw;
+  font-weight: 400;
   letter-spacing: 1.52px;
 }
 
@@ -302,9 +320,9 @@ input[type=text]:focus {
 }
 
 @media (max-width: 1500px) { 
-  .container {
+  /* .container {
     margin: 20px;
-  }
+  } */
 
   .add-new {
     width: 450px;
@@ -320,7 +338,7 @@ input[type=text]:focus {
   
   
   input::placeholder {
-    font-size: 46px;
+    /* font-size: 46px; */
   }
 }
 
@@ -330,11 +348,11 @@ input[type=text]:focus {
   }
   
   input[type=text] {
-    font-size: 55px;
+    /* font-size: 55px; */
   }
   
   input::placeholder {
-    font-size: 46px;
+    /* font-size: 46px; */
   }
 }
 
@@ -359,7 +377,7 @@ input[type=text]:focus {
 
 @media (max-width: 767px) {
   .container {
-    margin: 5px;
+    /* margin: 5px; */
     width: 300px;
   }
 
@@ -385,11 +403,11 @@ input[type=text]:focus {
   }
   
   input[type=text] {
-    font-size: 25px;
+    /* font-size: 25px; */
   }
   
   input::placeholder {
-    font-size: 20px;
+    /* font-size: 20px; */
   }
 
   .add-new-container {

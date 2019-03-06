@@ -1954,8 +1954,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// import ScaleText from "react-scale-text"
 
 
+
+var Logo = __webpack_require__("V+3I");
 
 var _ref = Object(preact_min["h"])(
 	'div',
@@ -2049,9 +2052,9 @@ var index_App = function (_Component) {
 			_this.setState({ plusHover: true });
 		}, _this.hideAddNew = function () {
 			_this.setState({ plusHover: false });
-		}, _this.showAddNew = function () {
+		}, _this.showShare = function () {
 			_this.setState({ showShare: true });
-		}, _this.hideAddNew = function () {
+		}, _this.hideShare = function () {
 			_this.setState({ showShare: false });
 		}, _this.toggleAddNewWord = function () {
 			_this.setState({
@@ -2065,7 +2068,7 @@ var index_App = function (_Component) {
 			}, 100);
 		}, _this.hideStartPage = function () {
 			_this.setState({ showStartPage: false });
-		}, _this.showShareBtns = function () {}, _temp), _possibleConstructorReturn(_this, _ret);
+		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
 	App.prototype.componentDidMount = function componentDidMount() {
@@ -2129,7 +2132,7 @@ var index_App = function (_Component) {
 						Object(preact_min["h"])(
 							'div',
 							{ className: addNewClass },
-							'\u0414\u041E\u0411\u0410\u0412\u0418\u0422\u042C \u041D\u041E\u0412\u041E\u0415 \u0421\u041B\u041E\u0412\u041E'
+							'\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u0432\u043E\u0435 \u0441\u043B\u043E\u0432\u043E'
 						),
 						Object(preact_min["h"])('img', {
 							className: 'plus',
@@ -2155,12 +2158,20 @@ var index_App = function (_Component) {
 								onInput: this.handleAddTranslationChange,
 								className: 'add-new-block-input'
 							}),
-							Object(preact_min["h"])('img', { className: 'add-btn', src: '/assets/add-btn.svg', alt: 'plus', onClick: this.addTranslation }),
+							Object(preact_min["h"])(
+								'div',
+								{ className: 'add-btn', onClick: this.addTranslation },
+								'\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C+'
+							),
 							this.state.showWordAdded ? Object(preact_min["h"])(
 								'div',
 								{ className: 'wordAdded' },
 								_ref5,
-								Object(preact_min["h"])('img', { src: '/assets/okich.svg', alt: 'start page text', onClick: this.toggleAddNewWord })
+								Object(preact_min["h"])(
+									'div',
+									{ className: 'wordAddedOk', onClick: this.toggleAddNewWord },
+									'\u043E\u043A\u0438\u0447'
+								)
 							) : ''
 						) : ''
 					)
@@ -2177,16 +2188,20 @@ var index_App = function (_Component) {
 					}),
 					Object(preact_min["h"])(
 						'div',
-						{ className: 'translation-result' },
-						this.state.translation
+						{ className: 'translation-result parent' },
+						Object(preact_min["h"])(
+							'span',
+							null,
+							this.state.translation
+						)
 					)
 				) : '',
 				Object(preact_min["h"])(
 					'div',
 					{ className: 'shareContainer',
 						style: this.state.showShare ? 'width: 100%' : '',
-						onMouseEnter: this.showAddNew,
-						onMouseLeave: this.hideAddNew
+						onMouseEnter: this.showShare,
+						onMouseLeave: this.hideShare
 					},
 					_ref6,
 					this.state.showShare ? Object(preact_min["h"])(
@@ -2920,6 +2935,13 @@ function __importStar(mod) {
 function __importDefault(mod) {
     return mod && mod.__esModule ? mod : { default: mod };
 }
+
+/***/ }),
+
+/***/ "V+3I":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "13b3b0f3b1234192175252dfb48e82d5.svg";
 
 /***/ }),
 
