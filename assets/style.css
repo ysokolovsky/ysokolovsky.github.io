@@ -13,11 +13,11 @@ html, body
 }
 
 .container > img {
-  width: 5%;
+  width: 4%;
 }
 
 .head > img {
-  width: 30%;
+  width: 25%;
   align-self: center;
 }
 
@@ -46,8 +46,8 @@ html, body
 
 .box {
   cursor: pointer;
-  width: 5vw;
-  height: 5vw;
+  width: 4.5vw;
+  height: 4.5vw;
   background-color: #d55256;
 
   display: flex;
@@ -136,7 +136,7 @@ html, body
 
 .plus {
   margin-left: 15px;
-  height: 2.5vw;
+  height: 2.2vw;
   cursor: pointer;
 }
 
@@ -153,7 +153,7 @@ html, body
   color: #d55256;
   font-weight: 900;
   font-family: "Arial Black";
-  font-size: 2.8vw;
+  font-size: 2.2vw;
 }
 
 /* @media (max-width: 1440px) { 
@@ -301,7 +301,7 @@ html, body
 input[type=text] {
   color: #333333;
   font-family: Arial;
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-weight: 700;
   letter-spacing: 2.1px;
   border: 0;
@@ -310,7 +310,7 @@ input[type=text] {
 input::placeholder {
   color: #d3d3d3;
   font-family: Arial;
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-weight: 400;
   letter-spacing: 1.52px;
 }
