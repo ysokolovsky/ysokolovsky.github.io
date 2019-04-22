@@ -1,1 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="73" height="23" viewBox="0 0 73 23"><defs><path id="5qy1a" d="M142.013 941.749h69.526"/><path id="5qy1b" d="M196.162 952.549a1.126 1.126 0 0 1 .345-1.554l14.518-9.246-14.518-9.246a1.125 1.125 0 1 1 1.208-1.898l16.009 10.195a1.127 1.127 0 0 1 0 1.898l-16.009 10.196a1.126 1.126 0 0 1-1.553-.345z"/></defs><g><g transform="translate(-142 -930)"><use fill="#fff" fill-opacity="0" stroke="#000" stroke-miterlimit="50" stroke-width="3" xlink:href="#5qy1a"/></g><g transform="translate(-142 -930)"><use xlink:href="#5qy1b"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="46.85px" height="16.955px" viewBox="24.492 6.045 46.85 16.955" enable-background="new 24.492 6.045 46.85 16.955"
+	 xml:space="preserve">
+<g>
+	<g transform="translate(-142 -930)">
+		<g>
+			<path id="_x35_qy1a" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="3" stroke-miterlimit="50" d="
+				M166.492,944.56h44.817"/>
+		</g>
+	</g>
+	<g transform="translate(-142 -930)">
+		<g>
+			<path id="_x35_qy1b" d="M199.75,952.678c-0.251-0.394-0.135-0.917,0.259-1.168l10.913-6.95l-10.913-6.95
+				c-0.397-0.246-0.52-0.767-0.274-1.164c0.246-0.397,0.767-0.52,1.164-0.274c0.006,0.004,0.012,0.008,0.018,0.012l12.034,7.664
+				c0.394,0.252,0.509,0.776,0.256,1.17c-0.066,0.103-0.153,0.19-0.256,0.256l-12.034,7.664
+				C200.523,953.188,200.001,953.072,199.75,952.678L199.75,952.678z"/>
+		</g>
+	</g>
+</g>
+</svg>

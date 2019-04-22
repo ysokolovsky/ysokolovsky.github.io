@@ -1963,7 +1963,7 @@ var Logo = __webpack_require__("V+3I");
 var _ref = Object(preact_min["h"])(
 	'div',
 	{ className: 'startPage_text' },
-	'\u0424\u043B\u0435\u043A\u0441\u0438\u043A\u043E\u043D - \u0442\u043E\u043B\u043A\u043E\u0432\u044B\u0439 \u0441\u043B\u043E\u0432\u0430\u0440\u044C \u043C\u043E\u043B\u043E\u0434\u0435\u0436\u043D\u043E\u0433\u043E \u0441\u043B\u0435\u043D\u0433\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0434\u0430\u0436\u0435 \u0431\u0430\u0431\u0443\u0448\u043A\u0435 \u043E\u0431\u044A\u044F\u0441\u043D\u0438\u0442, \u0447\u0442\u043E \u043B\u043E\u0439\u0441 \u0438 \u043B\u043E\u0441\u044C - \u044D\u0442\u043E \u0440\u0430\u0437\u043D\u044B\u0435 \u0432\u0435\u0449\u0438.'
+	'\u0424\u043B\u0435\u043A\u0441\u0438\u043A\u043E\u043D \u2013 \u0442\u043E\u043B\u043A\u043E\u0432\u044B\u0439 \u0441\u043B\u043E\u0432\u0430\u0440\u044C \u043C\u043E\u043B\u043E\u0434\u0435\u0436\u043D\u043E\u0433\u043E \u0441\u043B\u0435\u043D\u0433\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0434\u0430\u0436\u0435 \u0431\u0430\u0431\u0443\u0448\u043A\u0435 \u043E\u0431\u044A\u044F\u0441\u043D\u0438\u0442, \u0447\u0442\u043E \u043B\u043E\u0439\u0441 \u0438 \u043B\u043E\u0441\u044C \u2013 \u044D\u0442\u043E \u0440\u0430\u0437\u043D\u044B\u0435 \u0432\u0435\u0449\u0438.'
 );
 
 var _ref2 = Object(preact_min["h"])('img', { src: '/assets/r.svg', alt: 'R' });
@@ -2013,7 +2013,7 @@ var index_App = function (_Component) {
 			showWordAdded: false,
 			plusHover: false,
 			showShare: false
-		}, _this.isShowAddNewBlock = false, _this.handleChange = function (e) {
+		}, _this.isShowAddNewBlock = false, _this.greet = '', _this.handleChange = function (e) {
 			_this.setState({ word: e.target.value });
 			_this.checkWord();
 		}, _this.handleAddWordChange = function (e) {
@@ -2082,6 +2082,7 @@ var index_App = function (_Component) {
 	App.prototype.componentDidMount = function componentDidMount() {
 		var _this2 = this;
 
+		this.greet = this.getRandomString();
 		var translationsRef = firebase.database().ref('translations');
 		translationsRef.on('value', function (snapshot) {
 			var translations = snapshot.val();
@@ -2131,7 +2132,7 @@ var index_App = function (_Component) {
 				Object(preact_min["h"])(
 					'div',
 					{ className: 'startPage_btn', onClick: this.hideStartPage },
-					this.getRandomString()
+					this.greet
 				)
 			) : '',
 			Object(preact_min["h"])(
@@ -2227,12 +2228,12 @@ var index_App = function (_Component) {
 						Object(preact_min["h"])(
 							'a',
 							{ href: '#', onClick: this.fbShare },
-							'Facebook'
+							'facebook'
 						),
 						Object(preact_min["h"])(
 							'a',
 							{ href: 'https://telegram.me/share/url?url=' + window.location.href + '?word=' + this.state.word + '&text=\u0427\u0435\u043A\u043D\u0438 \u043F\u0435\u0440\u0435\u0432\u043E\u0434', target: '_blank' },
-							'Telegram'
+							'telegram'
 						)
 					) : ''
 				)
@@ -7897,7 +7898,7 @@ var RealTimeConnection=Connection;/**
  */var ServerValue=Database.ServerValue;function registerDatabase(instance){// Register the Database Service with the 'firebase' namespace.
 var namespace=instance.INTERNAL.registerService('database',function(app,unused,url){return RepoManager.getInstance().databaseFromApp(app,url);},// firebase.database namespace properties
 {Reference:Reference,Query:Query,Database:Database,enableLogging:enableLogging,INTERNAL:INTERNAL,ServerValue:ServerValue,TEST_ACCESS:TEST_ACCESS},null,true);if(Object(__WEBPACK_IMPORTED_MODULE_0__firebase_util__["y" /* isNodeSdk */])()){module.exports=namespace;}}registerDatabase(__WEBPACK_IMPORTED_MODULE_3__firebase_app__["a" /* default */]);
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("lLwS")(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("f1Eh")(module)))
 
 /***/ }),
 
@@ -7905,6 +7906,36 @@ var namespace=instance.INTERNAL.registerService('database',function(app,unused,u
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "f1Eh":
+/***/ (function(module, exports) {
+
+module.exports = function (originalModule) {
+	if (!originalModule.webpackPolyfill) {
+		var module = Object.create(originalModule);
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function get() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function get() {
+				return module.i;
+			}
+		});
+		Object.defineProperty(module, "exports", {
+			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
 
 /***/ }),
 
@@ -8107,36 +8138,6 @@ function setLogLevel(level) {
 }
 
 
-
-/***/ }),
-
-/***/ "lLwS":
-/***/ (function(module, exports) {
-
-module.exports = function (originalModule) {
-	if (!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
 
 /***/ }),
 
