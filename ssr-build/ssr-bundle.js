@@ -2068,6 +2068,14 @@ var index_App = function (_Component) {
 			}, 100);
 		}, _this.hideStartPage = function () {
 			_this.setState({ showStartPage: false });
+		}, _this.fbShare = function () {
+			FB.ui({
+				method: 'share',
+				href: 'https://www.linkedin.com/shareArticle?mini=true&url=' + window.location.href + '?word=' + _this.state.word
+			}, function (response) {});
+		}, _this.getRandomString = function () {
+			var okies = ['бомба!', 'пушка!', 'го!', 'погнали!', 'изи', 'збс', 'лойс', 'эщкере'];
+			return okies[Math.floor(Math.random() * okies.length)];
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
@@ -2088,6 +2096,15 @@ var index_App = function (_Component) {
 			_this2.setState({
 				translations: newState
 			});
+
+			var url = new URL(window.location.href);
+			var searchParam = url.searchParams.get("word");
+			if (searchParam) {
+				_this2.setState({ addWord: searchParam });
+				_this2.setState({ word: searchParam });
+				_this2.checkWord();
+				_this2.setState({ showStartPage: false });
+			}
 		});
 
 		document.onclick = function (e) {
@@ -2114,7 +2131,7 @@ var index_App = function (_Component) {
 				Object(preact_min["h"])(
 					'div',
 					{ className: 'startPage_btn', onClick: this.hideStartPage },
-					'\u041E\u041A\u0418\u0427'
+					this.getRandomString()
 				)
 			) : '',
 			Object(preact_min["h"])(
@@ -2170,7 +2187,7 @@ var index_App = function (_Component) {
 								Object(preact_min["h"])(
 									'div',
 									{ className: 'wordAddedOk', onClick: this.toggleAddNewWord },
-									'\u043E\u043A\u0438\u0447'
+									'\u041E\u041A\u0418\u0427'
 								)
 							) : ''
 						) : ''
@@ -2209,8 +2226,13 @@ var index_App = function (_Component) {
 						{ className: 'shareBlock' },
 						Object(preact_min["h"])(
 							'a',
-							{ href: 'https://www.linkedin.com/shareArticle?mini=true&url=' + window.location.href, target: '_blank' },
-							'LinkedIn'
+							{ href: '#', onClick: this.fbShare },
+							'Facebook'
+						),
+						Object(preact_min["h"])(
+							'a',
+							{ href: 'https://telegram.me/share/url?url=' + window.location.href + '?word=' + this.state.word + '&text=\u0427\u0435\u043A\u043D\u0438 \u043F\u0435\u0440\u0435\u0432\u043E\u0434', target: '_blank' },
+							'Telegram'
 						)
 					) : ''
 				)
@@ -7875,7 +7897,7 @@ var RealTimeConnection=Connection;/**
  */var ServerValue=Database.ServerValue;function registerDatabase(instance){// Register the Database Service with the 'firebase' namespace.
 var namespace=instance.INTERNAL.registerService('database',function(app,unused,url){return RepoManager.getInstance().databaseFromApp(app,url);},// firebase.database namespace properties
 {Reference:Reference,Query:Query,Database:Database,enableLogging:enableLogging,INTERNAL:INTERNAL,ServerValue:ServerValue,TEST_ACCESS:TEST_ACCESS},null,true);if(Object(__WEBPACK_IMPORTED_MODULE_0__firebase_util__["y" /* isNodeSdk */])()){module.exports=namespace;}}registerDatabase(__WEBPACK_IMPORTED_MODULE_3__firebase_app__["a" /* default */]);
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("f1Eh")(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("lLwS")(module)))
 
 /***/ }),
 
@@ -7883,36 +7905,6 @@ var namespace=instance.INTERNAL.registerService('database',function(app,unused,u
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "f1Eh":
-/***/ (function(module, exports) {
-
-module.exports = function (originalModule) {
-	if (!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function get() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function get() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
 
 /***/ }),
 
@@ -8115,6 +8107,36 @@ function setLogLevel(level) {
 }
 
 
+
+/***/ }),
+
+/***/ "lLwS":
+/***/ (function(module, exports) {
+
+module.exports = function (originalModule) {
+	if (!originalModule.webpackPolyfill) {
+		var module = Object.create(originalModule);
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function get() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function get() {
+				return module.i;
+			}
+		});
+		Object.defineProperty(module, "exports", {
+			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
 
 /***/ }),
 
