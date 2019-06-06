@@ -21,6 +21,10 @@ html, body
   align-self: center;
 }
 
+.mainWrapper {
+  height: 85%;
+}
+
 .shareContainer {
   position: absolute;
   bottom: 0;
@@ -162,29 +166,12 @@ html, body
   font-size: 2.2vw;
 }
 
-/* @media (max-width: 1440px) { 
-  .add-new-container_text {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 1103px) { 
-  .add-new-container_text {
-    font-size: 25px;
-  }
-}
-
-@media (max-width: 768px) {
-  .add-new-container_text {
-    font-size: 20px;
-  }
-} */
-
 .add-btn {
   cursor: pointer;
   color: #ffffff;
   font-family: "Arial Black";
   font-size: 2.5vw;
+  font-weight: 900;
 }
 
 .add-new-block {
@@ -222,6 +209,7 @@ html, body
   font-size: 2.5vw;
   font-weight: 900;
   letter-spacing: normal;
+  text-align: right;
 }
 
 .add-new-block textarea {
@@ -242,7 +230,7 @@ html, body
 
 .add-new-block textarea::placeholder {
   color: #333333;
-  font-family: Arial;
+  font-family: "Arial Black";
   font-size: 2.5vw;
   font-weight: 900;
   letter-spacing: normal;
@@ -277,7 +265,7 @@ html, body
   color: #ffffff;
   font-family: "Arial Black";
   font-weight: 600;
-  width: 80%;
+  width: 90%;
   text-align: right;
   font-size: 1.7vw;
   margin-top: 3%;
@@ -289,6 +277,7 @@ html, body
   font-family: "Arial Black";
   font-size: 2.5vw;
   margin-bottom: 20px;
+  font-weight: 900;
 }
 
 .translation-result {
@@ -325,10 +314,6 @@ input[type=text]:focus {
 }
 
 @media (max-width: 1500px) { 
-  /* .container {
-    margin: 20px;
-  } */
-
   .add-new {
     width: 450px;
   }
@@ -339,108 +324,125 @@ input[type=text]:focus {
     margin-top: 60px;
     font-size: 33px;
   }
-  
-  
-  
-  input::placeholder {
-    /* font-size: 46px; */
-  }
-}
-
-@media (max-width: 1103px) { 
-  .translation-result {
-    font-size: 33px;
-  }
-  
-  input[type=text] {
-    /* font-size: 55px; */
-  }
-  
-  input::placeholder {
-    /* font-size: 46px; */
-  }
 }
 
 @media (max-width: 768px) {
-  .add-new-block {
-    width: 500px;
+  .startPage_text {
+    width: 80%;
+  }
+  .mainWrapper {
+    height: 95%;
   }
 
-  .head {
-    flex-direction: column;
-    align-items: baseline;
+  .line {
+    margin-top: 10px;
+  }
+
+  .head > img {
+    width: 65%;
+  }
+
+  .container > img {
+    width: 10%;
   }
 
   .add-new-container {
-    width: 100%;
-    justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
   }
   .add-new-container_text {
+    font-size: 6.5vw;
     display: flex !important;
+    line-height: 1;
+    margin-bottom: 10px;
   }
-}
-
-@media (max-width: 767px) {
-  .container {
-    /* margin: 5px; */
-    width: 300px;
-  }
-
-  .add-new-block {
-    width: 100%;
-    height: calc(100vh - 20px);
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
+  .plus {
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-top: -7px;
+    height: 5.5vw;
   }
 
-  .head {
-    flex-direction: column;
-    align-items: baseline;
+  input[type=text] {
+    font-size: 8.5vw;
   }
-
-  .head img {
-    width: 100%;
+  input::placeholder {
+    font-size: 8.5vw;
   }
 
   .translation-result {
-    font-size: 23px;
-  }
-  
-  input[type=text] {
-    /* font-size: 25px; */
-  }
-  
-  input::placeholder {
-    /* font-size: 20px; */
+    font-size: 8.5vw;
   }
 
-  .add-new-container {
-    width: 100%;
-    justify-content: flex-start;
-    position: initial;
+  .translation-result:before {
+    content: '';
+    display: flex;
+    margin-bottom: 10px;
   }
-  .add-new-container_text {
-    display: flex !important;
+
+  .withBorder {
+    width: 40%;
+    border-top: 1px solid #000000;
   }
+
+  .add-new-block {
+    width: 95vw;
+    height: 50vh;
+    top: -55vh;
+    left: -72%; 
+    box-sizing: border-box;
+  }
+
 
   .add-new-block input[type=text] {
-    font-size: 20px;
+    font-size: 8vw;
+    font-weight: 900;
+    width: 90%
   }
-  
+
   .add-new-block input::placeholder {
-    font-size: 18px;
-  }
-  
-  .add-new-block textarea {
-    font-size: 20px;
-  }
-  
-  .add-new-block textarea::placeholder {
-    color: #333333;
-    font-family: Arial;
-    font-size: 28px;
+    font-size: 8vw;
     font-weight: 900;
     letter-spacing: normal;
   }
+
+  
+
+  .add-new-block textarea {
+    font-size: 8vw;
+    width: 80%;
+    height: 200px;
+    font-weight: 900;
+  }
+
+  .add-new-block textarea::placeholder {
+    font-size: 8vw;
+  }
+
+  .add-btn {
+    font-size: 8vw;
+  }
+
+  .wordAdded {
+    top: 0;
+    left: 0;
+  }
+
+  .wordAddedText {
+    font-size: 7vw;
+    margin-right: 20px;
+  }
+  .wordAddedOk {
+    font-size: 9vw;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    
+  }
+
+  .shareContainer {
+    display: none;
+  }
 }
+

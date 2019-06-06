@@ -1954,7 +1954,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// import ScaleText from "react-scale-text"
 
 
 
@@ -2023,7 +2022,7 @@ var index_App = function (_Component) {
 		}, _this.checkWord = function () {
 			_this.setState({ translation: '' });
 			var obj = _this.state.translations.find(function (word) {
-				return word.word === _this.state.word;
+				return word.word === _this.state.word.toLowerCase();
 			});
 			if (obj) {
 				_this.setState({ translation: obj.translation });
@@ -2071,7 +2070,7 @@ var index_App = function (_Component) {
 		}, _this.fbShare = function () {
 			FB.ui({
 				method: 'share',
-				href: 'https://www.linkedin.com/shareArticle?mini=true&url=' + window.location.href + '?word=' + _this.state.word
+				href: 'https://developers.facebook.com/docs/'
 			}, function (response) {});
 		}, _this.getRandomString = function () {
 			var okies = ['бомба!', 'пушка!', 'го!', 'погнали!', 'изи', 'збс', 'лойс', 'эщкере'];
@@ -2124,7 +2123,7 @@ var index_App = function (_Component) {
 
 		return Object(preact_min["h"])(
 			'div',
-			{ style: 'height: 85%' },
+			{ className: 'mainWrapper' },
 			this.state.showStartPage ? Object(preact_min["h"])(
 				'div',
 				{ className: 'startPage' },
@@ -2149,7 +2148,7 @@ var index_App = function (_Component) {
 						{ className: 'add-new-container' },
 						Object(preact_min["h"])(
 							'div',
-							{ className: addNewClass },
+							{ className: addNewClass, onClick: this.toggleAddNewWord },
 							'\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u0432\u043E\u0435 \u0441\u043B\u043E\u0432\u043E'
 						),
 						Object(preact_min["h"])('img', {
@@ -2179,7 +2178,7 @@ var index_App = function (_Component) {
 							Object(preact_min["h"])(
 								'div',
 								{ className: 'add-btn', onClick: this.addTranslation },
-								'\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C+'
+								'\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C +'
 							),
 							this.state.showWordAdded ? Object(preact_min["h"])(
 								'div',
@@ -2188,7 +2187,7 @@ var index_App = function (_Component) {
 								Object(preact_min["h"])(
 									'div',
 									{ className: 'wordAddedOk', onClick: this.toggleAddNewWord },
-									'\u041E\u041A\u0418\u0427'
+									'\u043E\u043A\u0438\u0447'
 								)
 							) : ''
 						) : ''
@@ -2206,7 +2205,7 @@ var index_App = function (_Component) {
 					}),
 					Object(preact_min["h"])(
 						'div',
-						{ className: 'translation-result parent' },
+						{ className: 'translation-result parent ' + (this.state.translation ? 'withBorder' : '') },
 						Object(preact_min["h"])(
 							'span',
 							null,
@@ -2964,7 +2963,7 @@ function __importDefault(mod) {
 /***/ "V+3I":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "13b3b0f3b1234192175252dfb48e82d5.svg";
+module.exports = __webpack_require__.p + "135ff68e27e6fb2bf85481a4d2bbfabb.svg";
 
 /***/ }),
 
